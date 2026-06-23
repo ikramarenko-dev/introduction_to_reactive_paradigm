@@ -1,0 +1,60 @@
+services:
+
+  mongo:
+    image: mongo
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: pwd
+    healthcheck:
+      test: [ "CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping')" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  mongoimport:
+    image: mongo
+    volumes:
+      - ../Reactive_Paradigm_FOR_STUDENTS/mongo/data/users.json:/data/users.json
+    command: >
+      mongoimport --host mongo --username root --password pwd
+      --authenticationDatabase admin
+      --db reactive_paradigm --collection users
+      --file /data/users.json --jsonArray
+    depends_on:
+      mongo:
+        condition: service_healthy
+
+  order-search-service:
+    build:
+      context: ../Reactive_Paradigm_FOR_STUDENTS/order-search-service
+      dockerfile: ../../introduction_to_reactive_paradigm/docker/order-search-service.Dockerfile
+    ports:
+      - "8081:8080"
+
+  product-info-service:
+    build:
+      context: ../Reactive_Paradigm_FOR_STUDENTS/product-info-service
+      dockerfile: ../../introduction_to_reactive_paradigm/docker/product-info-service.Dockerfile
+    ports:
+      - "8082:8080"
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://root:pwd@mongo:27017/reactive_paradigm?authSource=admin
+      SERVICES_ORDER-SEARCH_URL: http://order-search-service:8080
+      SERVICES_PRODUCT-INFO_URL: http://product-info-service:8080
+    depends_on:
+      mongo:
+        condition: service_healthy
+      order-search-service:
+        condition: service_started
+      product-info-service:
+        condition: service_started

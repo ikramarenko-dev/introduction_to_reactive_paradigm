@@ -1,5 +1,6 @@
 package com.example.reactiveparadigm.client;
 
+import com.example.reactiveparadigm.logging.MdcContext;
 import com.example.reactiveparadigm.model.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -33,8 +34,8 @@ public class ProductInfoClient {
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<Product>>() {})
                 .timeout(TIMEOUT)
-                .doOnNext(products -> log.info("Received products for code {}: {}", productCode, products))
-                .doOnError(error -> log.error("Error fetching products for code {}: {}", productCode, error.getMessage()))
+                .doOnEach(MdcContext.logOnNext(products -> log.info("Received products for code {}: {}", productCode, products)))
+                .doOnEach(MdcContext.logOnError(error -> log.error("Error fetching products for code {}: {}", productCode, error.getMessage())))
                 .onErrorReturn(Collections.emptyList());
     }
 }

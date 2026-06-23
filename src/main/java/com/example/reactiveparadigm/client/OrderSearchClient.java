@@ -1,5 +1,6 @@
 package com.example.reactiveparadigm.client;
 
+import com.example.reactiveparadigm.logging.MdcContext;
 import com.example.reactiveparadigm.model.Order;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,7 +28,7 @@ public class OrderSearchClient {
                 .accept(MediaType.APPLICATION_NDJSON)
                 .retrieve()
                 .bodyToFlux(Order.class)
-                .doOnNext(order -> log.info("Received order: {}", order))
-                .doOnError(error -> log.error("Error fetching orders for phone {}: {}", phoneNumber, error.getMessage()));
+                .doOnEach(MdcContext.logOnNext(order -> log.info("Received order: {}", order)))
+                .doOnEach(MdcContext.logOnError(error -> log.error("Error fetching orders for phone {}: {}", phoneNumber, error.getMessage())));
     }
 }

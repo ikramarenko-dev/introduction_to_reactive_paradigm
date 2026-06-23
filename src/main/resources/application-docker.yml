@@ -1,18 +1,15 @@
 spring:
   data:
     mongodb:
-      host: localhost
+      host: mongo
       port: 27017
       database: reactive_paradigm
       username: root
       password: pwd
       authentication-database: admin
 
-server:
-  port: 8080
-
 services:
   order-search:
-    url: http://localhost:8081
+    url: http://order-search-service:8080
   product-info:
-    url: http://localhost:8082
+    url: http://product-info-service:8080

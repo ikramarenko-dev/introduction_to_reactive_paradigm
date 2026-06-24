@@ -8,7 +8,6 @@ import com.example.reactiveparadigm.model.Product;
 import com.example.reactiveparadigm.model.UserOrderResponse;
 import com.example.reactiveparadigm.repository.UserInfoRepository;
 import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -16,7 +15,6 @@ import reactor.core.publisher.Mono;
 import java.util.Comparator;
 import java.util.List;
 
-@Slf4j
 @Service
 @RequiredArgsConstructor
 public class UserOrderService {

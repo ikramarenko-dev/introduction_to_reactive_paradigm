@@ -1,12 +1,12 @@
-package com.example.reactiveparadigm.service;
+package com.gd.reactiveparadigm.service;
 
-import com.example.reactiveparadigm.client.OrderSearchClient;
-import com.example.reactiveparadigm.client.ProductInfoClient;
-import com.example.reactiveparadigm.domain.User;
-import com.example.reactiveparadigm.model.Order;
-import com.example.reactiveparadigm.model.Product;
-import com.example.reactiveparadigm.model.UserOrderResponse;
-import com.example.reactiveparadigm.repository.UserInfoRepository;
+import com.gd.reactiveparadigm.client.OrderSearchClient;
+import com.gd.reactiveparadigm.client.ProductInfoClient;
+import com.gd.reactiveparadigm.domain.User;
+import com.gd.reactiveparadigm.model.Order;
+import com.gd.reactiveparadigm.model.Product;
+import com.gd.reactiveparadigm.model.UserOrderResponse;
+import com.gd.reactiveparadigm.repository.UserInfoRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;

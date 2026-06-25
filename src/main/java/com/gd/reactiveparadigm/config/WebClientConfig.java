@@ -1,4 +1,4 @@
-package com.example.reactiveparadigm.config;
+package com.gd.reactiveparadigm.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

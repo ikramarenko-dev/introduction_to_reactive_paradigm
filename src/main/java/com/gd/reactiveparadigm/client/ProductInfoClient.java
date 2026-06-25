@@ -1,7 +1,7 @@
-package com.example.reactiveparadigm.client;
+package com.gd.reactiveparadigm.client;
 
-import com.example.reactiveparadigm.logging.MdcContext;
-import com.example.reactiveparadigm.model.Product;
+import com.gd.reactiveparadigm.logging.MdcContext;
+import com.gd.reactiveparadigm.model.Product;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.ParameterizedTypeReference;

@@ -1,4 +1,4 @@
-package com.example.reactiveparadigm.client;
+package com.gd.reactiveparadigm.client;
 
 import com.github.tomakehurst.wiremock.WireMockServer;
 import com.github.tomakehurst.wiremock.core.WireMockConfiguration;

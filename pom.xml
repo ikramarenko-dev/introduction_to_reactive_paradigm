@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.example</groupId>
+    <groupId>com.gd</groupId>
     <artifactId>introduction-to-reactive-paradigm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>introduction-to-reactive-paradigm</name>

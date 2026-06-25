@@ -1,7 +1,7 @@
-package com.example.reactiveparadigm.controller;
+package com.gd.reactiveparadigm.controller;
 
-import com.example.reactiveparadigm.model.UserOrderResponse;
-import com.example.reactiveparadigm.service.UserOrderService;
+import com.gd.reactiveparadigm.model.UserOrderResponse;
+import com.gd.reactiveparadigm.service.UserOrderService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
-import static com.example.reactiveparadigm.logging.MdcContext.withRequestId;
+import static com.gd.reactiveparadigm.logging.MdcContext.withRequestId;
 
 @RestController
 @RequestMapping("/api/users")

@@ -1,4 +1,4 @@
-package com.example.reactiveparadigm.model;
+package com.gd.reactiveparadigm.model;
 
 import lombok.Builder;
 import lombok.Data;

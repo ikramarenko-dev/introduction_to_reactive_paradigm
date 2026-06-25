@@ -1,4 +1,4 @@
-package com.example.reactiveparadigm.domain;
+package com.gd.reactiveparadigm.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

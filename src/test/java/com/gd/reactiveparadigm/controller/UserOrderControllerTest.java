@@ -1,7 +1,7 @@
-package com.example.reactiveparadigm.controller;
+package com.gd.reactiveparadigm.controller;
 
-import com.example.reactiveparadigm.model.UserOrderResponse;
-import com.example.reactiveparadigm.service.UserOrderService;
+import com.gd.reactiveparadigm.model.UserOrderResponse;
+import com.gd.reactiveparadigm.service.UserOrderService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.WebFluxTest;

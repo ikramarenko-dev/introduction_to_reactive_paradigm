@@ -1,11 +1,11 @@
-package com.example.reactiveparadigm.service;
+package com.gd.reactiveparadigm.service;
 
-import com.example.reactiveparadigm.client.OrderSearchClient;
-import com.example.reactiveparadigm.client.ProductInfoClient;
-import com.example.reactiveparadigm.domain.User;
-import com.example.reactiveparadigm.model.Order;
-import com.example.reactiveparadigm.model.Product;
-import com.example.reactiveparadigm.repository.UserInfoRepository;
+import com.gd.reactiveparadigm.client.OrderSearchClient;
+import com.gd.reactiveparadigm.client.ProductInfoClient;
+import com.gd.reactiveparadigm.domain.User;
+import com.gd.reactiveparadigm.model.Order;
+import com.gd.reactiveparadigm.model.Product;
+import com.gd.reactiveparadigm.repository.UserInfoRepository;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

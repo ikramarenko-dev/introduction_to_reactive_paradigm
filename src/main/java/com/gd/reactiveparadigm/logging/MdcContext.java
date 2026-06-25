@@ -1,4 +1,4 @@
-package com.example.reactiveparadigm.logging;
+package com.gd.reactiveparadigm.logging;
 
 import org.slf4j.MDC;
 import reactor.core.publisher.Signal;

@@ -34,8 +34,8 @@ public class ProductInfoClient {
                 .retrieve()
                 .bodyToMono(new ParameterizedTypeReference<List<Product>>() {})
                 .timeout(TIMEOUT)
-                .doOnEach(MdcContext.logOnNext(products -> log.info("Received products for code {}: {}", productCode, products)))
-                .doOnEach(MdcContext.logOnError(error -> log.error("Error fetching products for code {}: {}", productCode, error.getMessage())))
+                .doOnEach(signal -> MdcContext.logOnNext(signal, () -> log.info("Received products for code {}: {}", productCode, signal.get())))
+                .doOnEach(signal -> MdcContext.logOnError(signal, () -> log.error("Error fetching products for code {}: {}", productCode, signal.getThrowable().getMessage())))
                 .onErrorReturn(Collections.emptyList());
     }
 }

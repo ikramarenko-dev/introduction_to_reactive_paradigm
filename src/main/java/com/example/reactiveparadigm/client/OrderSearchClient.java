@@ -28,7 +28,7 @@ public class OrderSearchClient {
                 .accept(MediaType.APPLICATION_NDJSON)
                 .retrieve()
                 .bodyToFlux(Order.class)
-                .doOnEach(MdcContext.logOnNext(order -> log.info("Received order: {}", order)))
-                .doOnEach(MdcContext.logOnError(error -> log.error("Error fetching orders for phone {}: {}", phoneNumber, error.getMessage())));
+                .doOnEach(signal -> MdcContext.logOnNext(signal, () -> log.info("Received order: {}", signal.get())))
+                .doOnEach(signal -> MdcContext.logOnError(signal, () -> log.error("Error fetching orders for phone {}: {}", phoneNumber, signal.getThrowable().getMessage())));
     }
 }

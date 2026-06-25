@@ -49,9 +49,24 @@ Integration uses a **5s timeout** — on failure the response is treated as an e
 #### request header `requestId`
 
 #### response **<font color='30c030'>200</font>** OK
+
 ```json
-{"orderNumber":"Order_0","userName":"John","phoneNumber":"123456789","productCode":"3852","productName":"Apple","productId":"444"}
-{"orderNumber":"Order_1","userName":"John","phoneNumber":"123456789","productCode":"5256","productName":null,"productId":null}
+{
+  "orderNumber": "Order_0",
+  "userName": "John",
+  "phoneNumber": "123456789",
+  "productCode": "3852",
+  "productName": "Apple",
+  "productId": "444"
+},
+{
+  "orderNumber": "Order_1",
+  "userName": "John",
+  "phoneNumber": "123456789",
+  "productCode": "5256",
+  "productName": null,
+  "productId": null
+}
 ```
 
 | Field         | Type   | Required |

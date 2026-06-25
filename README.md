@@ -93,7 +93,7 @@ docker compose stop product-info-service
 ### Project structure
 
 ```
-src/main/java/com/example/reactiveparadigm/
+src/main/java/com/gd/reactiveparadigm/
 ├── client/
 │   ├── OrderSearchClient.java       # WebClient integration — reactive NDJSON stream
 │   └── ProductInfoClient.java       # WebClient integration — with 5s timeout + fallback

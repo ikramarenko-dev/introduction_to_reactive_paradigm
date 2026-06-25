@@ -70,10 +70,16 @@ Integration uses a **5s timeout** — on failure the response is treated as an e
 ### Project run
 
 1. Install [Docker](https://docs.docker.com/desktop/) and [Colima](https://github.com/abiosoft/colima) (or any Docker runtime)
-2. Clone external services:
+2. Clone external services into the **same parent directory** as this project:
 ```
 git clone https://github.com/gridu/Reactive_Paradigm_FOR_STUDENTS
 ```
+> The cloned repo must sit alongside this project, e.g.:
+> ```
+> parent-dir/
+> ├── introduction_to_reactive_paradigm/   ← this project
+> └── Reactive_Paradigm_FOR_STUDENTS/      ← external services
+> ```
 3. Start all services:
 ```
 colima start
